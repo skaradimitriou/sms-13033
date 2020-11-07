@@ -7,8 +7,8 @@ import androidx.room.RoomDatabase
 import com.stathis.sms13033.ui.user.model.User
 
 
-@Database(entities = [User::class], version = 1, exportSchema = false)
-public abstract class UsersDatabase : RoomDatabase() {
+@Database(entities = [User::class] , version = 4, exportSchema = false)
+abstract class UsersDatabase : RoomDatabase() {
 
     abstract fun usersDao(): UserDao
 
@@ -25,8 +25,8 @@ public abstract class UsersDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     UsersDatabase::class.java,
-                    "word_database"
-                ).build()
+                    "users_database"
+                ).allowMainThreadQueries().fallbackToDestructiveMigration().build()
                 INSTANCE = instance
                 // return instance
                 instance

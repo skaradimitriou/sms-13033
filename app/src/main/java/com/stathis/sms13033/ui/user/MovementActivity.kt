@@ -1,12 +1,16 @@
 package com.stathis.sms13033.ui.user
 
 import android.content.Intent
+import android.os.Bundle
 import android.text.Editable
+import android.util.Log
 import android.widget.CompoundButton
 import androidx.lifecycle.ViewModelProvider
 import com.stathis.sms13033.R
 import com.stathis.sms13033.abstraction.AbstractActivity
+import com.stathis.sms13033.database.UsersDatabase
 import com.stathis.sms13033.ui.choice.ChoiceActivity
+import com.stathis.sms13033.ui.user.model.User
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MovementActivity : AbstractActivity(R.layout.activity_main) {
@@ -16,11 +20,13 @@ class MovementActivity : AbstractActivity(R.layout.activity_main) {
     override fun initLayout() {
         viewModel = ViewModelProvider(this).get(MovementViewModel::class.java)
 
-        if (data_switch.isChecked) {
-            name_field.editText?.text =
-                Editable.Factory.getInstance().newEditable("Stathis Karadimitriou")
-            address_field.editText?.text =
-                Editable.Factory.getInstance().newEditable("Sachini 4")
+        // init Room Db
+        viewModel.initDatabase(this)
+
+        checkSwitchPermission()
+
+        if (data_switch.isChecked && viewModel.dbExists()) {
+            getUserData()
         }
     }
 
@@ -28,23 +34,30 @@ class MovementActivity : AbstractActivity(R.layout.activity_main) {
 
         data_switch.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
-                name_field.editText?.text =
-                    Editable.Factory.getInstance().newEditable("Stathis Karadimitriou")
-                address_field.editText?.text =
-                    Editable.Factory.getInstance().newEditable("Sachini 4")
+                // check if input is different than
+                if (viewModel.dbExists()) {
+                    updateUser()
+                } else {
+                    saveUser()
+                }
             } else {
-                name_field.editText?.text =
-                    Editable.Factory.getInstance().newEditable("")
-                address_field.editText?.text =
-                    Editable.Factory.getInstance().newEditable("")
+                when (viewModel.userExists(fullName.text.toString(), address.text.toString())) {
+                    true -> {
+                        deleteUser()
+                    }
+                }
             }
         }
 
         user_screen_btn.setOnClickListener {
-            startActivity(Intent(this, ChoiceActivity::class.java).apply {
-                this.putExtra("fullName", fullName.text.toString())
-                this.putExtra("address", address.text.toString())
-            })
+            if (!fullName.text.toString().isNullOrEmpty() && !address.text.toString()
+                    .isNullOrEmpty()
+            ) {
+                startActivity(Intent(this, ChoiceActivity::class.java).apply {
+                    this.putExtra("fullName", fullName.text.toString())
+                    this.putExtra("address", address.text.toString())
+                })
+            }
         }
     }
 
@@ -52,4 +65,46 @@ class MovementActivity : AbstractActivity(R.layout.activity_main) {
         //
     }
 
+    private fun getUserData() {
+        name_field.editText?.text =
+            Editable.Factory.getInstance().newEditable(viewModel.getUserFullName())
+        address_field.editText?.text =
+            Editable.Factory.getInstance().newEditable(viewModel.getUserAddress())
+    }
+
+    private fun saveUser() {
+        viewModel.saveUser(
+            fullName.text.toString(),
+            address.text.toString(),
+            data_switch.isChecked
+        )
+    }
+
+    private fun updateUser() {
+        viewModel.updateUserData(
+            fullName.text.toString(),
+            address.text.toString(),
+            data_switch.isChecked
+        )
+    }
+
+    private fun deleteUser() {
+        viewModel.deleteUser(
+            fullName.text.toString(),
+            address.text.toString(),
+            data_switch.isChecked
+        )
+        name_field.editText?.text =
+            Editable.Factory.getInstance().newEditable("")
+        address_field.editText?.text =
+            Editable.Factory.getInstance().newEditable("")
+    }
+
+    private fun checkSwitchPermission() {
+        if (viewModel.dbExists()) {
+            data_switch.isChecked = viewModel.getUser().saveMyData
+        } else {
+            data_switch.isChecked = false
+        }
+    }
 }
