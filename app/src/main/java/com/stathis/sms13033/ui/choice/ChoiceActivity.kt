@@ -24,9 +24,6 @@ class ChoiceActivity : AbstractActivity(R.layout.activity_choice),ChoiceActivity
         fullName = intent.getStringExtra("fullName") ?: ""
         address = intent.getStringExtra("address") ?: ""
 
-        choices_fullName.text = fullName
-        choices_address.text = address
-
         choices_recycler.adapter = viewModel.adapter
         viewModel.initActivityListener(this)
     }
