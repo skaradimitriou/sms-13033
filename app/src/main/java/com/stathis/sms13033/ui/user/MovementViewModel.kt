@@ -3,8 +3,11 @@ package com.stathis.sms13033.ui.user
 import android.content.Context
 import android.util.Log
 import androidx.lifecycle.ViewModel
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.stathis.sms13033.R
 import com.stathis.sms13033.database.UsersDatabase
 import com.stathis.sms13033.ui.user.model.User
+
 
 class MovementViewModel : ViewModel() {
 
@@ -44,7 +47,7 @@ class MovementViewModel : ViewModel() {
     }
 
     fun updateUserData(fullName: String, address: String, saveMyData: Boolean) {
-        val user = User(1, fullName, address,saveMyData)
+        val user = User(1, fullName, address, saveMyData)
         for (i in usersDatabase.usersDao().getAll()) {
             if (i.fullName == user.fullName || i.address == user.address) {
                 updateUser(user)
@@ -62,7 +65,7 @@ class MovementViewModel : ViewModel() {
 
     fun userExists(fullName: String, address: String): Boolean {
         for (i in usersDatabase.usersDao().getAll()) {
-            if(fullName == i.fullName && address == i.address){
+            if (fullName == i.fullName && address == i.address) {
                 return true
             }
         }
@@ -74,6 +77,13 @@ class MovementViewModel : ViewModel() {
             user = i
         }
         return user
+    }
+
+    fun showAboutDialog(context: Context) {
+        val builder = MaterialAlertDialogBuilder(context)
+        builder.setTitle(context.resources.getString(R.string.about_app_header))
+        builder.setMessage(context.resources.getString(R.string.about_app))
+        builder.show()
     }
 
 }

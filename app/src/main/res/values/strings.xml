@@ -1,6 +1,24 @@
 <resources>
     <string name="app_name">13033 SMS</string>
 
+    <string name="about_app_header">Σχετικά με την εφαρμογή</string>
+    <string name="about_app">Η εφαρμογή είναι δωρεάν και μοναδικός σκοπός της είναι να διευκολύνει τους πολίτες στην αποστολή του SMS κατα τις μετακινήσεις τους κατα τη διάρκεια του lockdown. Η εφαρμογή κατα επιλογή του χρήστη μπορεί να αποθηκεύσει ΤΟΠΙΚΑ (στη συσκευή) το ονοματεπώνυμο και τη διεύθυνση σας, ώστε να μην χρειάζεται να την εισάγετε συνεχώς.</string>
+
+    <string name="header">Άδεια Μετακίνησης με SMS</string>
+
+    <string name="fullName">Ονοματεπώνυμο</string>
+    <string name="address">Διεύθυνση Αριθμός Περιοχή</string>
+    <string name="saveData">Αποθήκευση των στοιχείων μου ΤΟΠΙΚΑ</string>
+    <string name="btn_text">Επιλογή Μετακίνησης</string>
+
     <string name="movement_reason">Επιλογή λόγου μετακίνησης</string>
+
+    <!-- Movement reasons -->
+    <string name="movement_reason_1">Φαρμακείο/ Γιατρός</string>
+    <string name="movement_reason_2">Σουπερ Μάρκετ</string>
+    <string name="movement_reason_3">Δημόσια Υπηρεσία/ Τράπεζα</string>
+    <string name="movement_reason_4">Παροχή Βοήθειας/ Συνοδεία μαθητών στο σχολείο</string>
+    <string name="movement_reason_5">Τελετή/ Διαζευγμένοι Γονείς</string>
+    <string name="movement_reason_6">Σωματική Ασκηση/ Κίνηση με κατοικίδιο</string>
 
 </resources>

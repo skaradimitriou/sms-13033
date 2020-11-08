@@ -8,7 +8,7 @@ import com.stathis.sms13033.abstraction.AbstractActivity
 import com.stathis.sms13033.listeners.ChoiceActivityListener
 import com.stathis.sms13033.ui.choice.model.MovementOption
 import kotlinx.android.synthetic.main.activity_choice.*
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_user.*
 
 class ChoiceActivity : AbstractActivity(R.layout.activity_choice),ChoiceActivityListener{
 

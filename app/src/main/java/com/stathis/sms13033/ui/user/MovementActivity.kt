@@ -11,9 +11,9 @@ import com.stathis.sms13033.abstraction.AbstractActivity
 import com.stathis.sms13033.database.UsersDatabase
 import com.stathis.sms13033.ui.choice.ChoiceActivity
 import com.stathis.sms13033.ui.user.model.User
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_user.*
 
-class MovementActivity : AbstractActivity(R.layout.activity_main) {
+class MovementActivity : AbstractActivity(R.layout.activity_user) {
 
     private lateinit var viewModel: MovementViewModel
 
@@ -31,6 +31,10 @@ class MovementActivity : AbstractActivity(R.layout.activity_main) {
     }
 
     override fun runOperation() {
+
+        about.setOnClickListener {
+            viewModel.showAboutDialog(this)
+        }
 
         data_switch.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {

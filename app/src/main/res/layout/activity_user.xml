@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".ui.user.MovementActivity">
 
+    <ImageView
+        android:id="@+id/about"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:background="@drawable/about_app"
+        android:clickable="true"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/menoume_spiti_img"
         android:layout_width="100dp"
@@ -20,7 +32,7 @@
         android:id="@+id/menoume_spiti_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Άδεια Μετακίνησης με SMS"
+        android:text="@string/header"
         android:textColor="#214252"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -34,9 +46,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
         android:layout_marginTop="50dp"
-        android:hint="Ονοματεπώνυμο"
+        android:layout_marginEnd="15dp"
+        android:hint="@string/fullName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/menoume_spiti_header">
 
@@ -53,7 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:hint="Διεύθυνση, Αριθμός, Περιοχή"
+        android:hint="@string/address"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/name_field">
 
@@ -69,7 +81,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:checked="true"
-        android:text="Αποθήκευση των στοιχείων μου ΤΟΠΙΚΑ"
+        android:text="@string/saveData"
         app:layout_constraintEnd_toEndOf="@id/address_field"
         app:layout_constraintTop_toBottomOf="@id/address_field" />
 
@@ -78,7 +90,7 @@
         android:layout_width="match_parent"
         android:layout_height="54dp"
         android:layout_margin="15dp"
-        android:text="Επιλογή Μετακίνησης"
+        android:text="@string/btn_text"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
