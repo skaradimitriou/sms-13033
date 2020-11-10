@@ -21,4 +21,6 @@
     <string name="movement_reason_5">Τελετή/ Διαζευγμένοι Γονείς</string>
     <string name="movement_reason_6">Σωματική Ασκηση/ Κίνηση με κατοικίδιο</string>
 
+    <string name="movement_reason_sure">Νέα Μετακίνηση</string>
+
 </resources>
