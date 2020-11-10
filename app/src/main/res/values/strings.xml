@@ -22,5 +22,9 @@
     <string name="movement_reason_6">Σωματική Ασκηση/ Κίνηση με κατοικίδιο</string>
 
     <string name="movement_reason_sure">Νέα Μετακίνηση</string>
+    <string name="mov_option_reason">Μετακίνηση 1</string>
+    <string name="mov_option_desc">Φαρμακείο/ Γιατρός</string>
+    <string name="mov_option_button">Αποστολή SMS</string>
+    <string name="mov_option_verify">Επιβεβαιώστε οτι λάβατε απάντηση.</string>
 
 </resources>

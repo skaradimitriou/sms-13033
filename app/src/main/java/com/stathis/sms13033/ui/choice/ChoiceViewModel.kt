@@ -50,16 +50,4 @@ class ChoiceViewModel : ViewModel(), ItemClickListener {
             Log.d("e", e.toString())
         }
     }
-
-    fun showSuccessMessage(context: Context) {
-        val builder = MaterialAlertDialogBuilder(context)
-        builder.setTitle(R.string.movement_reason_sure)
-        builder.setMessage("Το sms έχει σταλεί. Επιβεβαιώστε οτι λάβατε απάντηση.")
-        builder.show()
-    }
-
-    fun getMovementOptionSelected(){
-
-    }
-
 }

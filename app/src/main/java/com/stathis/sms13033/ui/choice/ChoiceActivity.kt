@@ -4,6 +4,7 @@ import android.Manifest
 import android.app.Activity
 import android.content.pm.PackageManager
 import android.util.Log
+import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -14,6 +15,7 @@ import com.stathis.sms13033.abstraction.AbstractActivity
 import com.stathis.sms13033.listeners.ChoiceActivityListener
 import com.stathis.sms13033.ui.choice.model.MovementOption
 import kotlinx.android.synthetic.main.activity_choice.*
+import kotlinx.android.synthetic.main.movement_option_dialog.view.*
 
 class ChoiceActivity : AbstractActivity(R.layout.activity_choice), ChoiceActivityListener {
 
@@ -61,7 +63,6 @@ class ChoiceActivity : AbstractActivity(R.layout.activity_choice), ChoiceActivit
 
     override fun sendSMS(movementOption: MovementOption) {
         val permission = ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS)
-
         if (permission == PackageManager.PERMISSION_GRANTED) {
             sendSMSMessage(movementOption)
         } else {
@@ -75,21 +76,18 @@ class ChoiceActivity : AbstractActivity(R.layout.activity_choice), ChoiceActivit
     }
 
     private fun sendSMSMessage(movementOption: MovementOption) {
-        val builder = MaterialAlertDialogBuilder(this)
-        builder.setTitle(R.string.movement_reason_sure)
-        builder.setMessage("Έχετε επιλέξει SMS για: ${movementOption.movementName}. Είστε σίγουρος/η;")
-            .setPositiveButton("Αποστολή") { dialog, id ->
-
-                //sending SMS
-                viewModel.sendSMSMessage(movementOption, fullName, address)
-                viewModel.showSuccessMessage(this)
-            }
-            .setNegativeButton(
-                "Άκυρο"
-            ) { dialog, id ->
-                dialog.dismiss()
-            }
+        val movementOptionView =
+            LayoutInflater.from(this).inflate(R.layout.movement_option_dialog, null)
+        val builder = MaterialAlertDialogBuilder(this).setView(movementOptionView)
         builder.show()
+        movementOptionView.mov_option_img.setImageResource(movementOption.movementPhoto)
+        movementOptionView.mov_option_reason.text = "Μετακίνηση ${movementOption.movementId}"
+        movementOptionView.mov_option_desc.text = movementOption.movementName
+        movementOptionView.mov_option_button.setOnClickListener {
+
+            //sending SMS
+            viewModel.sendSMSMessage(movementOption, fullName, address)
+        }
     }
 
 
