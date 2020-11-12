@@ -1,17 +1,17 @@
 package com.stathis.sms13033.ui.choice
 
-import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.telephony.SmsManager
 import android.util.Log
+import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.ViewModel
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.stathis.sms13033.R
 import com.stathis.sms13033.listeners.ChoiceActivityListener
 import com.stathis.sms13033.listeners.ItemClickListener
 import com.stathis.sms13033.ui.choice.model.MovementOption
 import com.stathis.sms13033.ui.choice.recycler.MovementOptionsAdapter
 import com.stathis.sms13033.ui.choice.repository.ChoiceRepo
-import java.lang.Exception
+
 
 class ChoiceViewModel : ViewModel(), ItemClickListener {
 
@@ -49,5 +49,7 @@ class ChoiceViewModel : ViewModel(), ItemClickListener {
         } catch (e: Exception) {
             Log.d("e", e.toString())
         }
+
+        val number = "12346556" // The number on which you want to send SMS
     }
 }
