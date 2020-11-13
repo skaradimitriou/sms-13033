@@ -1,4 +1,4 @@
-package com.stathis.sms13033.ui.user.model
+package com.stathis.movementsms.ui.user.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

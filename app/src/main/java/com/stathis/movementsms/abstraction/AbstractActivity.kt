@@ -1,4 +1,4 @@
-package com.stathis.sms13033.abstraction
+package com.stathis.movementsms.abstraction
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

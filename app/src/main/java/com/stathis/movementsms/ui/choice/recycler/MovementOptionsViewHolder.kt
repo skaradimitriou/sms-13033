@@ -1,10 +1,9 @@
-package com.stathis.sms13033.ui.choice.recycler
+package com.stathis.movementsms.ui.choice.recycler
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.stathis.sms13033.R
-import com.stathis.sms13033.listeners.ItemClickListener
-import com.stathis.sms13033.ui.choice.model.MovementOption
+import com.stathis.movementsms.listeners.ItemClickListener
+import com.stathis.movementsms.ui.choice.model.MovementOption
 import kotlinx.android.synthetic.main.movement_option_item_row.view.*
 
 class MovementOptionsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

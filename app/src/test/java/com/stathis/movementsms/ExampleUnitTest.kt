@@ -1,4 +1,4 @@
-package com.stathis.sms13033
+package com.stathis.movementsms
 
 import org.junit.Test
 

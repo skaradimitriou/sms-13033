@@ -1,7 +1,7 @@
-package com.stathis.sms13033.database
+package com.stathis.movementsms.database
 
 import androidx.room.*
-import com.stathis.sms13033.ui.user.model.User
+import com.stathis.movementsms.ui.user.model.User
 
 @Dao
 interface UserDao {

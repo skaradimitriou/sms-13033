@@ -1,10 +1,10 @@
-package com.stathis.sms13033.database
+package com.stathis.movementsms.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.stathis.sms13033.ui.user.model.User
+import com.stathis.movementsms.ui.user.model.User
 
 
 @Database(entities = [User::class] , version = 4, exportSchema = false)

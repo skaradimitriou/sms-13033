@@ -1,4 +1,4 @@
-package com.stathis.sms13033.ui.choice.recycler
+package com.stathis.movementsms.ui.choice.recycler
 
 import android.annotation.SuppressLint
 import androidx.recyclerview.widget.DiffUtil

@@ -8,11 +8,11 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.stathis.sms13033"
+        applicationId "com.stathis.movementsms"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 2
-        versionName "2.0"
+        versionCode 1
+        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

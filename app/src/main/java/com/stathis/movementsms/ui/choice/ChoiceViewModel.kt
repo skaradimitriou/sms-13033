@@ -1,4 +1,4 @@
-package com.stathis.sms13033.ui.choice
+package com.stathis.movementsms.ui.choice
 
 import android.content.Intent
 import android.net.Uri
@@ -6,11 +6,11 @@ import android.telephony.SmsManager
 import android.util.Log
 import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.ViewModel
-import com.stathis.sms13033.listeners.ChoiceActivityListener
-import com.stathis.sms13033.listeners.ItemClickListener
-import com.stathis.sms13033.ui.choice.model.MovementOption
-import com.stathis.sms13033.ui.choice.recycler.MovementOptionsAdapter
-import com.stathis.sms13033.ui.choice.repository.ChoiceRepo
+import com.stathis.movementsms.listeners.ChoiceActivityListener
+import com.stathis.movementsms.listeners.ItemClickListener
+import com.stathis.movementsms.ui.choice.model.MovementOption
+import com.stathis.movementsms.ui.choice.recycler.MovementOptionsAdapter
+import com.stathis.movementsms.ui.choice.repository.ChoiceRepo
 
 
 class ChoiceViewModel : ViewModel(), ItemClickListener {

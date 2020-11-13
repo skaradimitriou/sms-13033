@@ -1,16 +1,11 @@
-package com.stathis.sms13033.ui.user
+package com.stathis.movementsms.ui.user
 
 import android.content.Intent
-import android.os.Bundle
 import android.text.Editable
-import android.util.Log
-import android.widget.CompoundButton
 import androidx.lifecycle.ViewModelProvider
-import com.stathis.sms13033.R
-import com.stathis.sms13033.abstraction.AbstractActivity
-import com.stathis.sms13033.database.UsersDatabase
-import com.stathis.sms13033.ui.choice.ChoiceActivity
-import com.stathis.sms13033.ui.user.model.User
+import com.stathis.movementsms.R
+import com.stathis.movementsms.abstraction.AbstractActivity
+import com.stathis.movementsms.ui.choice.ChoiceActivity
 import kotlinx.android.synthetic.main.activity_user.*
 
 class MovementActivity : AbstractActivity(R.layout.activity_user) {

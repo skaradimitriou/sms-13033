@@ -1,12 +1,12 @@
-package com.stathis.sms13033.ui.user
+package com.stathis.movementsms.ui.user
 
 import android.content.Context
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.stathis.sms13033.R
-import com.stathis.sms13033.database.UsersDatabase
-import com.stathis.sms13033.ui.user.model.User
+import com.stathis.movementsms.R
+import com.stathis.movementsms.database.UsersDatabase
+import com.stathis.movementsms.ui.user.model.User
 
 
 class MovementViewModel : ViewModel() {

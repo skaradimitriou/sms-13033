@@ -1,7 +1,7 @@
-package com.stathis.sms13033.ui.choice.repository
+package com.stathis.movementsms.ui.choice.repository
 
-import com.stathis.sms13033.R
-import com.stathis.sms13033.ui.choice.model.MovementOption
+import com.stathis.movementsms.R
+import com.stathis.movementsms.ui.choice.model.MovementOption
 
 class ChoiceRepo {
 
