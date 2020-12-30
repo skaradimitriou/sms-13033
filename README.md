@@ -5,6 +5,9 @@ All individuals residing in Greece should send an SMS text message to 13033 in o
 ### Programming Language 
 Kotlin
 
+### Architecture
+Model - View - ViewModel (MVVM)
+
 ### Theme 
 [Material Design](https://material.io/)
 
