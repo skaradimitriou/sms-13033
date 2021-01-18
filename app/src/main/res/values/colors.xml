@@ -5,5 +5,7 @@
     <color name="colorAccent">#6200EE</color>
 
     <color name="black">#000000</color>
+    <color name="white_bg">#FAFAFA</color>
+    <color name="navy_blue">#214252</color>
 
 </resources>

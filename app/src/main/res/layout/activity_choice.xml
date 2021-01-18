@@ -4,19 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fafafa"
+    android:background="@color/white_bg"
     tools:context=".ui.choice.ChoiceActivity">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/movement_option_reason"
+        style="@style/text_18_bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:padding="@dimen/dimen_10"
         android:text="@string/movement_reason"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,13 +21,11 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/choices_recycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="10dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
+        android:padding="@dimen/dimen_10"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/movement_option_reason"
         tools:itemCount="6"
         tools:listitem="@layout/movement_option_item_row" />

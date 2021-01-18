@@ -1,10 +1,5 @@
 package com.stathis.movementsms.ui.choice
 
-import android.content.Intent
-import android.net.Uri
-import android.telephony.SmsManager
-import android.util.Log
-import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.ViewModel
 import com.stathis.movementsms.listeners.ChoiceActivityListener
 import com.stathis.movementsms.listeners.ItemClickListener
@@ -27,29 +22,11 @@ class ChoiceViewModel : ViewModel(), ItemClickListener {
     }
 
     private fun getMovementOptions() {
-
         val choiceRepo = ChoiceRepo()
         adapter.submitList(choiceRepo.getMovementChoices())
     }
 
     override fun itemClicked(movementOption: MovementOption) {
         choiceActivityListener.sendSMS(movementOption)
-    }
-
-    fun sendSMSMessage(movementOption: MovementOption, fullName: String, address: String) {
-        try {
-            val sms = SmsManager.getDefault()
-            sms.sendTextMessage(
-                "13033",
-                null,
-                "${movementOption.movementId} $fullName $address",
-                null,
-                null
-            )
-        } catch (e: Exception) {
-            Log.d("e", e.toString())
-        }
-
-        val number = "12346556" // The number on which you want to send SMS
     }
 }

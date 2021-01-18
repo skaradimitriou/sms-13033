@@ -8,21 +8,20 @@
 
     <ImageView
         android:id="@+id/about"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:backgroundTint="@color/colorPrimary"
+        android:layout_width="@dimen/dimen_30"
+        android:layout_height="@dimen/dimen_30"
+        android:layout_margin="@dimen/dimen_10"
         android:background="@drawable/about_app"
+        android:backgroundTint="@color/colorPrimary"
         android:clickable="true"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/menoume_spiti_img"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="15dp"
+        android:layout_width="@dimen/image_100"
+        android:layout_height="@dimen/image_100"
+        android:layout_marginTop="@dimen/dimen_15"
         android:src="@drawable/menoume_spiti"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,12 +29,11 @@
 
     <TextView
         android:id="@+id/menoume_spiti_header"
+        style="@style/text_18_bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/header"
-        android:textColor="#214252"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:textColor="@color/navy_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/menoume_spiti_img" />
@@ -45,10 +43,10 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="15dp"
+        android:layout_marginTop="@dimen/dimen_50"
         android:hint="@string/fullName"
+        android:paddingStart="@dimen/dimen_15"
+        android:paddingEnd="@dimen/dimen_15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/menoume_spiti_header">
 
@@ -64,8 +62,8 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
         android:hint="@string/address"
+        android:padding="@dimen/dimen_15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/name_field">
 
@@ -88,8 +86,8 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/user_screen_btn"
         android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:layout_margin="15dp"
+        android:layout_height="@dimen/dimen_54"
+        android:layout_margin="@dimen/dimen_15"
         android:text="@string/btn_text"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
